@@ -11,7 +11,10 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 
 import { postSurvey } from './api';
-mongoose.connect(process.env.REACT_APP_DB_ACTIVE);
+//For local development, add mongo connection URI to .env file -> process.env.REACT_APP_REACT_APP_MONGODB_URI
+mongoose.connect(
+  process.env.MONGODB_URI || process.env.REACT_APP_REACT_APP_MONGODB_URI
+);
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
