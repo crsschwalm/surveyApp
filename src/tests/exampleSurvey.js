@@ -5,7 +5,7 @@ const survey = {
   description: 'This is an example of what a survey could look like',
   fields: [
     {
-      type: 'checkAll',
+      fieldType: 'checkAll',
       fieldTitle: 'Check all That apply',
       options: [
         { id: '1234', label: 'first check' },
@@ -14,7 +14,7 @@ const survey = {
       ]
     },
     {
-      type: 'selectFrom',
+      fieldType: 'selectFrom',
       fieldTitle: 'Select the one that applies',
       options: [
         { id: '1234', label: 'first option' },
@@ -23,7 +23,7 @@ const survey = {
       ]
     },
     {
-      type: 'textInput',
+      fieldType: 'textInput',
       fieldTitle: 'Tell me something'
     }
   ],

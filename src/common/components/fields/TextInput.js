@@ -11,7 +11,7 @@ export default class TextInput extends Component {
       <div className="field">
         <label className="label">{this.props.fieldTitle}</label>
         <div className="control">
-          <textarea className="textarea" placeholder="Textarea" />
+          <textarea className="textarea" placeholder="Start typing!" />
         </div>
       </div>
     );

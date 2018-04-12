@@ -49,9 +49,9 @@ export default class TakeSurvey extends Component {
   }
 }
 
-function determineField(field = { type: undefined }, key) {
+function determineField(field = { fieldType: undefined }, key) {
   let component;
-  switch (field.type) {
+  switch (field.fieldType) {
     case 'selectFrom':
       component = <SelectFrom key={key} {...field} />;
       break;

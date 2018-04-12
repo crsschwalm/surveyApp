@@ -7,14 +7,24 @@ import { fetchCounter } from '../common/api/counter';
 import qs from 'qs';
 import { renderToString } from 'react-dom/server';
 import serialize from 'serialize-javascript';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+
+import { postSurvey } from './api';
+mongoose.connect(process.env.REACT_APP_DB_ACTIVE);
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
 const server = express();
 
+server.use(bodyParser.urlencoded({ extended: true }));
+server.use(bodyParser.json());
+
 server
   .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
+  .post('/api/post/survey', postSurvey)
+
   .get('/*', (req, res) => {
     fetchCounter(apiResult => {
       // Read the counter from the request, if provided
