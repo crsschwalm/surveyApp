@@ -1,7 +1,10 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const razzleHeroku = require('razzle-heroku');
 
 module.exports = {
   modify: (config, { target, dev }, webpack) => {
+    config = razzleHeroku(config, { target, dev }, webpack);
+
     if (target === 'web') {
       const extractSass = new ExtractTextPlugin({
         filename: '[name].[contenthash].css',
