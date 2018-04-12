@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
+  <footer className="footer">
+    <div className="container">
+      <div className="content has-text-centered">
         <p>
           <strong>DMI Survey App</strong> by{' '}
           <a href="https://www.linkedin.com/in/carsonschwalm">Carson Schwalm</a>.

@@ -6,7 +6,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.props.surveys = [survey];
+    this.tempProps = { surveys: [survey] };
   }
 
   render() {
@@ -24,7 +24,7 @@ export default class Home extends Component {
           <div className="container section">
             <div className="columns is-centered">
               <div className="column is-three-quarters is-narrow">
-                <SurveyList surveys={this.props.surveys} />
+                <SurveyList surveys={this.tempProps.surveys} />
               </div>
             </div>
           </div>

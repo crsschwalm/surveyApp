@@ -8,10 +8,10 @@ export default class TextInput extends Component {
 
   render() {
     return (
-      <div class="field">
-        <label class="label">{this.props.fieldTitle}</label>
-        <div class="control">
-          <textarea class="textarea" placeholder="Textarea" />
+      <div className="field">
+        <label className="label">{this.props.fieldTitle}</label>
+        <div className="control">
+          <textarea className="textarea" placeholder="Textarea" />
         </div>
       </div>
     );

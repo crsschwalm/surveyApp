@@ -7,8 +7,16 @@ export default class CheckAll extends Component {
   }
   renderCheckBoxes() {
     return this.props.options.map(option => (
-      <label class="checkbox">
-        <input id={option.id} type="checkbox" />
+      <label
+        key={option.id}
+        className="checkbox"
+        style={{ marginRight: '.5rem' }}
+      >
+        <input
+          id={option.id}
+          type="checkbox"
+          style={{ marginRight: '.25rem' }}
+        />
         {option.label}
       </label>
     ));
@@ -16,9 +24,11 @@ export default class CheckAll extends Component {
 
   render() {
     return (
-      <div class="field">
-        <label class="label">{this.props.fieldTitle}</label>
-        <div class="control">{this.renderCheckBoxes()}</div>
+      <div className="field ">
+        <label className="label">{this.props.fieldTitle}</label>
+        <div className="control is-grouped is-grouped-multiline">
+          {this.renderCheckBoxes()}
+        </div>
       </div>
     );
   }

@@ -9,14 +9,14 @@ export default class SurveyCard extends Component {
   renderAdminOptions() {
     return (
       <div>
-        <a class="level-item" aria-label="edit">
-          <span class="icon is-medium">
-            <i class="fas fa-pencil-alt" aria-hidden="true" />
+        <a className="level-item" aria-label="edit">
+          <span className="icon is-medium">
+            <i className="fas fa-pencil-alt" aria-hidden="true" />
           </span>
         </a>
-        <a class="level-item" aria-label="delete">
-          <span class="icon is-medium">
-            <i class="fas fa-trash" aria-hidden="true" />
+        <a className="level-item" aria-label="delete">
+          <span className="icon is-medium">
+            <i className="fas fa-trash" aria-hidden="true" />
           </span>
         </a>
       </div>
@@ -36,26 +36,27 @@ export default class SurveyCard extends Component {
 
   render() {
     return (
-      <div class="box">
-        <article class="media">
-          <div class="media-left">
-            <span class="icon is-large">
+      <div className="box">
+        <article className="media">
+          <div className="media-left">
+            <span className="icon is-large">
               <i
-                class={`fas fa-2x ${this.props.survey.iconClass || 'fa-bug'}`}
+                className={`fas fa-2x ${this.props.survey.iconClass ||
+                  'fa-bug'}`}
                 aria-hidden="true"
               />
             </span>
           </div>
-          <div class="media-content">
-            <div class="content">
+          <div className="media-content">
+            <div className="content">
               <p>
                 <strong>{this.props.survey.name}</strong>{' '}
                 <small>{this.props.survey.author}</small> <br />
                 {this.props.survey.description}
               </p>
             </div>
-            <nav class="level is-mobile">
-              <div class="level-left">
+            <nav className="level is-mobile">
+              <div className="level-left">
                 {isAuthenticated()
                   ? this.renderAdminOptions()
                   : this.renderUserOptions()}

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class SelectFrom extends Component {
   constructor(props) {
     super(props);
-    this.state = { value };
+    this.state = { value: undefined };
   }
 
   handleChange(event) {
@@ -12,7 +12,7 @@ export default class SelectFrom extends Component {
 
   renderDropDownOptions() {
     return this.props.options.map(option => (
-      <option id={option.id} value={option.label}>
+      <option key={option.id} id={option.id} value={option.label}>
         {option.label}
       </option>
     ));
@@ -20,10 +20,10 @@ export default class SelectFrom extends Component {
 
   render() {
     return (
-      <div class="field">
-        <label class="label">{this.props.fieldTitle}</label>
-        <div class="control">
-          <div class="select">
+      <div className="field">
+        <label className="label">{this.props.fieldTitle}</label>
+        <div className="control">
+          <div className="select">
             <select value={this.state.value} onChange={this.handleChange}>
               {this.renderDropDownOptions()}
             </select>

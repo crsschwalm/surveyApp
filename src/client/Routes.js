@@ -10,6 +10,8 @@ import PrivateRoute from './PrivateRoute';
 import NavBar from '../common/pages/components/NavBar';
 import Footer from '../common/pages/components/Footer';
 
+import survey from '../tests/exampleSurvey';
+
 const Routes = () => {
   return (
     <div>
@@ -18,8 +20,14 @@ const Routes = () => {
       <Route exact path="/" component={Home} />
       <Route exact path="/admin" component={Login} />
       <PrivateRoute exact path="/admin/manager" component={SurveyManager} />
-      <PrivateRoute path="admin/results/:surveyId" component={SurveyResults} />
-      <Route path="/survey/:surveyId" component={TakeSurvey} />
+      <PrivateRoute
+        path="admin/results/:surveyId"
+        component={() => <SurveyResults survey={survey} />}
+      />
+      <Route
+        path="/survey/:surveyId"
+        render={() => <TakeSurvey survey={survey} />}
+      />
       <Footer />
     </div>
   );
