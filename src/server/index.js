@@ -7,27 +7,30 @@ import { fetchCounter } from '../common/api/counter';
 import qs from 'qs';
 import { renderToString } from 'react-dom/server';
 import serialize from 'serialize-javascript';
-import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-
-import { postSurvey } from './api';
-//For local development, add mongo connection URI to .env file -> process.env.REACT_APP_REACT_APP_MONGODB_URI
-mongoose.connect(
-  process.env.MONGODB_URI || process.env.REACT_APP_REACT_APP_MONGODB_URI
-);
-
+import Router from './router';
+import passport from 'passport';
+import session from 'express-session';
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
 const server = express();
 
-server.use(bodyParser.urlencoded({ extended: true }));
-server.use(bodyParser.json());
-
+server.disable('x-powered-by');
+//passport setup
 server
-  .disable('x-powered-by')
+  .use(
+    session({
+      secret: 'keyboard cat',
+      resave: false,
+      saveUninitialized: false
+    })
+  )
+  .use(passport.initialize())
+  .use(passport.session())
+  .use(bodyParser.urlencoded({ extended: true }))
+  .use(bodyParser.json())
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
-  .post('/api/post/survey', postSurvey)
-
+  .use('/api', Router)
   .get('/*', (req, res) => {
     fetchCounter(apiResult => {
       // Read the counter from the request, if provided

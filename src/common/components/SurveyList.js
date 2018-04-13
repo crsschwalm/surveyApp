@@ -8,7 +8,9 @@ export default class SurveyList extends Component {
   }
 
   renderSurveyCards() {
-    return this.props.surveys.map(survey => <SurveyCard survey={survey} />);
+    return this.props.surveys.map((survey, index) => (
+      <SurveyCard survey={survey} key={index} />
+    ));
   }
 
   render() {

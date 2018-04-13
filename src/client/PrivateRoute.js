@@ -9,7 +9,7 @@ const PrivateRoute = ({ component: Component, ...moreProps }) => (
       isAuthenticated() === true ? (
         <Component {...props} />
       ) : (
-        <Redirect to="/admin" />
+        <Redirect to="/login" />
       )
     }
   />

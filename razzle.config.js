@@ -5,6 +5,12 @@ module.exports = {
   modify: (config, { target, dev }, webpack) => {
     config = razzleHeroku(config, { target, dev }, webpack);
 
+    config.node = {
+      fs: 'empty',
+      net: 'empty',
+      tls: 'empty'
+    };
+
     if (target === 'web') {
       const extractSass = new ExtractTextPlugin({
         filename: '[name].[contenthash].css',

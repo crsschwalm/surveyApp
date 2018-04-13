@@ -9,7 +9,7 @@ export default class NavBar extends Component {
 
   renderLoginButton() {
     return (
-      <a className="button is-primary" href="/Admin">
+      <a className="button is-primary" href="/login">
         <span>Admin Login</span>
         <span className="icon">
           <i className="fas fa-arrow-circle-right" />
