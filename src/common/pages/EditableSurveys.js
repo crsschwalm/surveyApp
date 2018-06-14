@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SurveyList from '../components/SurveyList';
 import survey from '../../tests/exampleSurvey';
 
-export default class SurveyManager extends Component {
+export default class EditableSurveys extends Component {
   constructor(props) {
     super(props);
     this.state = {};

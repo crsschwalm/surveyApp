@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import SurveyList from '../components/SurveyList';
-import survey from '../../tests/exampleSurvey';
+import UserOptions from '../components/UserOptions'
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.tempProps = { surveys: [survey] };
   }
 
   render() {
@@ -20,15 +18,7 @@ export default class Home extends Component {
             </div>
           </div>
         </section>
-        <section className="section">
-          <div className="container section">
-            <div className="columns is-centered">
-              <div className="column is-three-quarters is-narrow">
-                <SurveyList surveys={this.tempProps.surveys} />
-              </div>
-            </div>
-          </div>
-        </section>
+        <UserOptions />
       </div>
     );
   }

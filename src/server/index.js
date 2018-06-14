@@ -58,20 +58,20 @@ server
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta charSet='utf-8' />
-        <title>DMI Survey</title>
+        <title>DMI Surveys</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         ${
-          assets.client.css
-            ? `<link rel="stylesheet" href="${assets.client.css}">`
-            : ''
+        assets.client.css
+          ? `<link rel="stylesheet" href="${assets.client.css}">`
+          : ''
         }
           ${
-            process.env.NODE_ENV === 'production'
-              ? `<script src="${assets.client.js}" defer></script>`
-              : `<script src="${assets.client.js}" defer crossorigin></script>`
-          }
+        process.env.NODE_ENV === 'production'
+          ? `<script src="${assets.client.js}" defer></script>`
+          : `<script src="${assets.client.js}" defer crossorigin></script>`
+        }
     </head>
     <body>
         <div id="root">${markup}</div>

@@ -6,33 +6,30 @@ export default class SurveyCard extends Component {
     this.state = {};
   }
 
-  renderAdminOptions() {
-    return (
-      <div>
-        <a className="level-item" aria-label="edit">
-          <span className="icon is-medium">
-            <i className="fas fa-pencil-alt" aria-hidden="true" />
-          </span>
-        </a>
-        <a className="level-item" aria-label="delete">
-          <span className="icon is-medium">
-            <i className="fas fa-trash" aria-hidden="true" />
-          </span>
-        </a>
-      </div>
-    );
-  }
-
-  renderUserOptions() {
-    return (
-      <a
-        href={`/survey/${this.props.survey.id}`}
-        className="button is-link is-medium level-item"
-      >
-        Take Survey
+  renderAdminOptions = () => (
+    <div>
+      <a className="level-item" aria-label="edit">
+        <span className="icon is-medium">
+          <i className="fas fa-pencil-alt" aria-hidden="true" />
+        </span>
       </a>
-    );
-  }
+      <a className="level-item" aria-label="delete">
+        <span className="icon is-medium">
+          <i className="fas fa-trash" aria-hidden="true" />
+        </span>
+      </a>
+    </div>
+  );
+
+
+  renderUserOptions = () => (
+    <a
+      href={`/survey/${this.props.survey.id}`}
+      className="button is-link is-medium level-item"
+    >
+      Take Survey
+      </a>
+  );
 
   render() {
     return (
