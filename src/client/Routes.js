@@ -10,29 +10,28 @@ import Register from '../common/pages/Register';
 import PrivateRoute from './PrivateRoute';
 import NavBar from '../common/pages/components/NavBar';
 import Footer from '../common/pages/components/Footer';
-
 import survey from '../tests/exampleSurvey';
+import ManageSurvey from '../common/pages/ManageSurvey'
 
-const Routes = () => {
-  return (
-    <div>
-      <NavBar />
-      <Route exact path="/counter" component={App} />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
-      <PrivateRoute exact path="/admin/manager" component={SurveyManager} />
-      <PrivateRoute
-        path="admin/results/:surveyId"
-        component={() => <SurveyResults survey={survey} />}
-      />
-      <Route
-        path="/survey/:surveyId"
-        render={() => <TakeSurvey survey={survey} />}
-      />
-      <Footer />
-    </div>
-  );
-};
+const Routes = () => (
+  <div>
+    <NavBar />
+    <Route exact path="/" component={Home} />
+    <Route exact path="/login" component={Login} />
+    <Route exact path="/register" component={Register} />
+    <Route exact path="/create" component={ManageSurvey} />
+    <PrivateRoute exact path="/admin/manager" component={SurveyManager} />
+    <PrivateRoute
+      path="admin/results/:surveyId"
+      component={() => <SurveyResults survey={survey} />}
+    />
+    <Route
+      path="/survey/:surveyId"
+      render={() => <TakeSurvey survey={survey} />}
+    />
+    <Route exact path="/counter" component={App} />
+    <Footer />
+  </div>
+)
 
 export default Routes;

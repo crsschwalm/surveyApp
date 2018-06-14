@@ -2,44 +2,35 @@ import React, { Component } from 'react';
 import { isAuthenticated } from '../../api/authentication';
 
 export default class NavBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  renderLoginButton = () => (
+    <a className="button is-primary" href="/login">
+      <span>Admin Login</span>
+      <span className="icon">
+        <i className="fas fa-arrow-circle-right" />
+      </span>
+    </a>
+  );
 
-  renderLoginButton() {
-    return (
-      <a className="button is-primary" href="/login">
-        <span>Admin Login</span>
-        <span className="icon">
-          <i className="fas fa-arrow-circle-right" />
-        </span>
-      </a>
-    );
-  }
-  renderLogoutButton() {
-    return (
-      <a className="button is-primary" href="/">
-        <span>Logout</span>
-        <span className="icon">
-          <i className="fas fa-arrow-circle-right" />
-        </span>
-      </a>
-    );
-  }
+  renderLogoutButton = () => (
+    <a className="button is-primary" href="/">
+      <span>Logout</span>
+      <span className="icon">
+        <i className="fas fa-arrow-circle-right" />
+      </span>
+    </a>
+  );
 
-  renderAdminOptions() {
-    return (
-      <div className="navbar-start">
-        <a className="navbar-item" href="/admin/manager">
-          Manage Surveys
+
+  renderAdminOptions = () => (
+    <div className="navbar-start">
+      <a className="navbar-item" href="/admin/manager">
+        Manage Surveys
         </a>
-        <a className="navbar-item" href="/admin/manager">
-          Survey Results
+      <a className="navbar-item" href="/admin/manager">
+        Survey Results
         </a>
-      </div>
-    );
-  }
+    </div>
+  );
 
   render() {
     return (

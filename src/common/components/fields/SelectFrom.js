@@ -10,13 +10,12 @@ export default class SelectFrom extends Component {
     this.setState({ value: event.target.value });
   }
 
-  renderDropDownOptions() {
-    return this.props.options.map(option => (
+  renderDropDownOptions = () =>
+    this.props.options.map(option => (
       <option key={option.id} id={option.id} value={option.label}>
         {option.label}
       </option>
     ));
-  }
 
   render() {
     return (

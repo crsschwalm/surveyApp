@@ -5,22 +5,14 @@ import TextInput from '../components/fields/TextInput';
 import SelectFrom from '../components/fields/SelectFrom';
 
 export default class TakeSurvey extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
 
-  renderFields() {
-    return this.props.survey.fields.map(determineField);
-  }
+  renderFields = () => this.props.survey.fields.map(determineField);
 
-  handleSubmit() {
-    return alert('woohoo logged!');
-  }
 
-  handleCancel() {
-    return alert('boohoo canceled!');
-  }
+  handleSubmit = () => alert('woohoo logged!');
+
+
+  handleCancel = () => alert('boohoo canceled!');
 
   render() {
     return (
@@ -63,7 +55,7 @@ function determineField(field = { fieldType: undefined }, key) {
       break;
 
     default:
-      component = () => {};
+      component = () => { };
       break;
   }
   return component;
