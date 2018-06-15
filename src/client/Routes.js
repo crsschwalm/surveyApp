@@ -11,7 +11,7 @@ import PrivateRoute from './PrivateRoute';
 import NavBar from '../common/components/globals/NavBar';
 import Footer from '../common/components/globals/Footer';
 import survey from '../tests/exampleSurvey';
-import ManageSurvey from '../common/components/ManageSurvey'
+import ManageSurvey from '../common/components/manageSurvey'
 import OpenSurveys from '../common/pages/OpenSurveys'
 
 const Routes = () => (
